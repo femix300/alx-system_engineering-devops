@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-#  displays To infinity and beyond indefinitely
+# displays To infinity and beyond indefinitely
+# will terminate on receiving the SIGINT (ctrl-C) signal
 while true
 do
   echo "To infinity and beyond"
