@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# A bash script that configures an ubuntu server by changing ip addresses
 sudo sed -i '/localhost/d' /etc/hosts
 echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
 
