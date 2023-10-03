@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install and configure Nginx web server
 
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get install -y nginx
 
 # Create or modify an Nginx site configuration
@@ -14,4 +14,4 @@ echo "server {
 }" | sudo tee /etc/nginx/sites-available/my-site
 
 # Reload Nginx to apply the configuration
-sudo service nginx reload
+sudo service nginx restart
