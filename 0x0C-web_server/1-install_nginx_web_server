@@ -1,0 +1,24 @@
+#!/bin/bash
+# Install and configure Nginx web server
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Create or modify an Nginx site configuration
+echo "server {
+    listen 80;
+    server_name _;  # Listen on all hostnames
+    location / {
+        root /var/www/html;
+        index index.txt;
+    }
+}" | sudo tee /etc/nginx/sites-available/my-site
+
+# Create a symbolic link to enable the site configuration
+sudo ln -s /etc/nginx/sites-available/my-site /etc/nginx/sites-enabled/
+
+# Remove the default Nginx default configuration
+sudo rm /etc/nginx/sites-enabled/default
+
+# Reload Nginx to apply the configuration
+sudo service nginx reload
