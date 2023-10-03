@@ -10,7 +10,7 @@ echo "server {
     server_name _;  # Listen on all hostnames
     location / {
         root /var/www/html;
-        index index.txt;
+        index index.html;
     }
 }" | sudo tee /etc/nginx/sites-available/my-site
 
