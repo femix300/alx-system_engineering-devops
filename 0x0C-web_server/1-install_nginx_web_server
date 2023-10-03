@@ -14,11 +14,5 @@ echo "server {
     }
 }" | sudo tee /etc/nginx/sites-available/my-site
 
-# Create a symbolic link to enable the site configuration
-sudo ln -s /etc/nginx/sites-available/my-site /etc/nginx/sites-enabled/
-
-# Remove the default Nginx default configuration
-sudo rm /etc/nginx/sites-enabled/default
-
 # Reload Nginx to apply the configuration
 sudo service nginx reload
