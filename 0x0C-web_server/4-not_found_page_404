@@ -6,7 +6,7 @@ apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 
 echo "Ceci n'est pas une page" > /var/www/html/index.html
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html > /dev/null
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 
 NGINX_CONFIG="
 server {
