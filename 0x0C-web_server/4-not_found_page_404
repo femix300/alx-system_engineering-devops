@@ -34,5 +34,4 @@ server {
 
 echo "$NGINX_CONFIG" > /etc/nginx/sites-available/default
 
-service nginx start
 service nginx reload
