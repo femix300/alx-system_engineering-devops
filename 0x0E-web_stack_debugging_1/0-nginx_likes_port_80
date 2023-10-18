@@ -6,4 +6,4 @@ rm /etc/nginx/sites-enabled/default
 # Configure nginx to listen on port 80 for all IPV4 IPs
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
-serice nginx restart
+service nginx restart
