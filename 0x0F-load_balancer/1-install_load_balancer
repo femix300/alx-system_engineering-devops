@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Installs and configures HAProxy on a server and makes it distribute request
+# between 2 servers using roundrobbin algorithm
+
+sudo apt-get -y update
+apt-get -y install haproxy
+
+# custom config file
+server_config=\
+"
+frontend  peter_frontend
+        bind *:80
+        mode http
+        default_backend morttix_backend
+backend morttix_backend
+        balance roundrobin
+        server 261780-web-01 3.90.65.131:80 check
+        server 261780-web-02 34.203.201.176:80 check
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+
+# enable haproxy to be started by init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+# Testing the HAproxy configuration file
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
+
+# Restart the Nginx service
+sudo service haproxy restart
