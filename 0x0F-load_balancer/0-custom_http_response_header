@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# custom http response header
+
+sudo sed -i "/server_name _/a add_header X-Served-By \$hostname;" /etc/nginx/sites-enabled/default
+# check for errors
+sudo nginx -t
+
+# restart nginx
+sudo service nginx restart
