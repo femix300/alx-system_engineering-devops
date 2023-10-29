@@ -20,8 +20,8 @@ if __name__ == "__main__":
     with open(filename, mode='w', newline='') as file:
         for item in todos:
             file.write('"{}","{}","{}","{}"\n'.format(
-                username,
                 item['userId'],
+                username,
                 item['completed'],
                 item['title'],
             ))
