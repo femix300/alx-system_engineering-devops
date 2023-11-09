@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# queries the reddit api using a given subreddit
+"""queries the reddit api using a given subreddit"""
 import requests
 
 
